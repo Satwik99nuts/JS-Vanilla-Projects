@@ -1,0 +1,425 @@
+Awesome 😄 — now you want to understand **each JavaScript word and term** like `querySelector`, `addEventListener`, `innerHTML`, etc.
+
+Let’s go **step-by-step** like I’m explaining to a **10-year-old who’s learning programming** for the first time.
+I’ll explain each word in your To-Do List JS code 💻👇
+
+---
+
+## 🧩 1. `let`
+
+### 👉 What it does:
+
+It’s how we **create a variable** — a small **box in the computer’s memory** to store information.
+
+### 🧠 Example:
+
+```js
+let name = "Shaurya";
+```
+
+Means:
+
+> "Make a box called name, and put the word ‘Shaurya’ inside it."
+
+---
+
+## 🧩 2. `document`
+
+### 👉 What it is:
+
+`document` means the **whole web page** that’s currently open in your browser.
+
+You can think of it like:
+
+> “Hey JavaScript, this is the paper (document) where all HTML elements live.”
+
+So whenever you write `document.something`,
+you’re telling the computer:
+
+> “Look for something inside the webpage.”
+
+---
+
+## 🧩 3. `querySelector()`
+
+### 👉 What it does:
+
+It helps us **find** things on the page.
+
+Think of it like a **magnifying glass 🔍** that searches for HTML elements.
+
+Example:
+
+```js
+document.querySelector('.box1')
+```
+
+means:
+
+> “Find the first thing on the page that has the class name `box1`.”
+
+You can also use:
+
+* `'#idname'` → to find by **id**
+* `'.classname'` → to find by **class**
+* `'tagname'` → to find by **tag**
+
+### Example:
+
+```js
+document.querySelector('h1') // finds the <h1> tag
+document.querySelector('#menu') // finds element with id="menu"
+document.querySelector('.button') // finds element with class="button"
+```
+
+---
+
+## 🧩 4. `function`
+
+### 👉 What it does:
+
+A **function** is like a **machine** that performs a task when you call it.
+
+You give it a name, tell it what to do, and later you can “run” it as many times as you want.
+
+### Example:
+
+```js
+function sayHello() {
+  console.log("Hello!");
+}
+sayHello(); // runs the function
+```
+
+In your app:
+
+```js
+function htmlTemplate(todo) {
+  return `<li>${todo} <span class="del">x</span></li>`;
+}
+```
+
+means:
+
+> “Make a machine that takes a word (the task) and returns a piece of HTML text.”
+
+---
+
+## 🧩 5. `return`
+
+### 👉 What it does:
+
+It gives back the **result** from a function.
+
+Like a vending machine 🍫:
+
+* You put in money (input)
+* It gives you a chocolate (return)
+
+Example:
+
+```js
+function double(num) {
+  return num * 2;
+}
+```
+
+Now `double(4)` gives back `8`.
+
+---
+
+## 🧩 6. `addEventListener()`
+
+### 👉 What it does:
+
+It tells your page:
+
+> “Hey! When something happens, run this function!”
+
+It **listens** for user actions like:
+
+* `click`
+* `submit`
+* `mouseover`
+* `keydown`
+
+### Example:
+
+```js
+button.addEventListener('click', function() {
+  alert("You clicked me!");
+});
+```
+
+In your app:
+
+```js
+form.addEventListener('submit', function(e) {
+  ...
+});
+```
+
+means:
+
+> “When someone presses the + button (submits the form), do this code.”
+
+---
+
+## 🧩 7. `e` or `event`
+
+### 👉 What it is:
+
+Whenever an event happens (like clicking, typing, or submitting),
+JavaScript gives us an **event object**, often named `e`.
+
+It’s like a small note that says:
+
+> “This is what just happened!”
+
+You can use it to:
+
+* Stop a form from refreshing (`e.preventDefault()`)
+* See what element was clicked (`e.target`)
+* Get information about keys, mouse position, etc.
+
+---
+
+## 🧩 8. `e.preventDefault()`
+
+### 👉 What it does:
+
+It means:
+
+> “Don’t do the browser’s normal behavior.”
+
+For example, normally when you submit a form, the page reloads.
+But we don’t want that, because we’re handling it in JavaScript.
+
+So we use:
+
+```js
+e.preventDefault();
+```
+
+to **stop** the reload.
+
+---
+
+## 🧩 9. `.value`
+
+### 👉 What it does:
+
+When you have an `<input>` element, `.value` gives you what the user typed in.
+
+Example:
+
+```js
+let input = document.querySelector('input');
+console.log(input.value);
+```
+
+If the person typed “Read a book”, it shows `"Read a book"` in the console.
+
+---
+
+## 🧩 10. `.trim()`
+
+### 👉 What it does:
+
+Removes **extra spaces** at the beginning or end of a text.
+
+Example:
+
+```js
+"  Hello ".trim()  // becomes "Hello"
+```
+
+In your app, it keeps the task clean.
+
+---
+
+## 🧩 11. `.length`
+
+### 👉 What it does:
+
+Tells how many characters are in a string (word).
+
+Example:
+
+```js
+"Hello".length  // gives 5
+```
+
+So we use it to check if someone typed something or left it blank:
+
+```js
+if (todo.length === 0) {
+  alert("Please enter a task");
+}
+```
+
+---
+
+## 🧩 12. `.innerHTML`
+
+### 👉 What it does:
+
+It shows or changes the **HTML inside** an element.
+
+Example:
+
+```js
+ul.innerHTML = "<li>Do homework</li>";
+```
+
+It puts this `<li>` inside the `<ul>`.
+
+In your app:
+
+```js
+ul.innerHTML += li;
+```
+
+means:
+
+> “Add this new task at the end of the list.”
+
+---
+
+## 🧩 13. `.reset()`
+
+### 👉 What it does:
+
+Clears all the inputs inside a form.
+
+So after adding a task, the input box becomes empty again.
+
+---
+
+## 🧩 14. `.addEventListener('click', ...)`
+
+### 👉 What it does:
+
+Listens for clicks.
+
+We used it for the delete button:
+
+```js
+ul.addEventListener('click', function(e) {
+  if (e.target.classList.contains('del')) {
+    e.target.parentElement.remove();
+  }
+});
+```
+
+Here’s how it works:
+
+* `ul` = the big list
+* When we click anywhere inside it, JavaScript checks:
+
+  * “Was the thing clicked a delete button (`class="del"`)?”
+
+If yes → remove the whole `<li>` (the task).
+
+---
+
+## 🧩 15. `.classList.contains()`
+
+### 👉 What it does:
+
+Checks if an element has a certain class name.
+
+Example:
+
+```js
+e.target.classList.contains('del')
+```
+
+means:
+
+> “Did the thing I clicked have the class `del`?”
+
+If true, we know it’s the red ❌ button.
+
+---
+
+## 🧩 16. `.parentElement`
+
+### 👉 What it does:
+
+It means “go one step up” in the HTML tree.
+
+Example:
+
+```html
+<li>Do homework <span class="del">x</span></li>
+```
+
+Here, the parent of `<span>` is `<li>`.
+
+So:
+
+```js
+e.target.parentElement.remove();
+```
+
+means:
+
+> “Remove the `<li>` that contains the delete button.”
+
+---
+
+## 🧩 17. `.remove()`
+
+### 👉 What it does:
+
+It **deletes** that element from the page.
+
+Example:
+
+```js
+element.remove();
+```
+
+→ poof 💨 it’s gone!
+
+---
+
+## 🧩 18. `console.log()`
+
+### 👉 What it does:
+
+It just prints messages to the **console** (developer’s screen).
+
+Used for checking what’s happening in your code.
+
+Example:
+
+```js
+console.log("Task added!");
+```
+
+---
+
+## 💬 Summary in simple table
+
+| Term                    | Meaning (like you’re 10)                          |
+| ----------------------- | ------------------------------------------------- |
+| `let`                   | Make a box to store something                     |
+| `document`              | Your whole webpage                                |
+| `querySelector()`       | Find something on the page                        |
+| `function`              | A machine that does a job                         |
+| `return`                | The output from that machine                      |
+| `addEventListener()`    | “When this happens, do that”                      |
+| `e`                     | The event (like a note saying what just happened) |
+| `preventDefault()`      | Stop the normal behavior                          |
+| `.value`                | What’s typed in the input box                     |
+| `.trim()`               | Cut extra spaces                                  |
+| `.length`               | How many letters                                  |
+| `.innerHTML`            | The HTML inside an element                        |
+| `.reset()`              | Clear the form                                    |
+| `.classList.contains()` | Check if it has a certain class                   |
+| `.parentElement`        | Go one step up in the HTML tree                   |
+| `.remove()`             | Delete that element                               |
+| `console.log()`         | Print info for testing                            |
+

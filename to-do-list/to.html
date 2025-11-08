@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="to.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Playwrite+HU:wght@100..400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container_box">
+        <h1 align="center"><u>My To Do List</u></h1>
+        <form action="" class="box1">
+            <input type="text" name="task" placeholder="Type your next task...">
+            <input type="submit" value="+" class="submit"> <!-- class islye de rahe hai kyuki humko usko baad mein styling bhi karna hai-->
+            <!-- aur yaha pe value bas wo plus sign rakhne ke liye hai, like wo bas simple rakhne ke liye hai, baad mein usko style kar denge-->
+        </form>
+
+        <h3>Added Tasks</h3>
+
+       <div class="row"> <!-- yaha pe humara sara list aayega -->
+                 <ul class="tasks_list">
+                    <li>Learn JS <span class="del">x</span></li>
+                 </ul>
+        </div>
+    </div>
+
+<script src="to.js"></script>
+</body>
+</html>
